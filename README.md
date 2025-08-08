@@ -1,7 +1,7 @@
 # react-practice
 
 Hooks
-- [v] useState
+- [x] useState
 - [ ] useEffect
 - [ ] useCallback
 - [ ] useMemo
