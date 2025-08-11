@@ -1,6 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import PracticeUseState from "./hooks/PracticeUseState";
+import PracticeUseEffect from "./hooks/PracticeUseEffect";
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
                 <li>
                   <Link to="/usestate">useState</Link>
                 </li>
-                <li>useEffect</li>
+                <li>
+                  <Link to="/useeffect">useEffect</Link>
+                </li>
                 <li>useCallback</li>
                 <li>useMemo</li>
                 <li>useActionState</li>
@@ -35,6 +38,7 @@ function App() {
           }
         />
         <Route path="/usestate" element={<PracticeUseState />} />
+        <Route path="/useeffect" element={<PracticeUseEffect />} />
       </Routes>
     </Router>
   );
