@@ -2,7 +2,7 @@
 
 Hooks
 - [x] useState
-- [ ] useEffect
+- [x] useEffect
 - [ ] useCallback
 - [ ] useMemo
 - [ ] useActionState
