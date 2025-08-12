@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 const PracticeUseState = () => {
   type User = {
     name: string;
-    age: number;
+    count: number;
   };
 
-  const [user, setUser] = useState<User>({ name: "John", age: 20 });
+  const [user, setUser] = useState<User>({ name: "Chii", count: 0 });
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const onClickChangeAge = () => {
+  const onClickChangeCount = () => {
     /*
     잘못된 예제
     - 객체의 속성을 직접 변경하면 리액트가 감지하지 못해 렌더링이 일어나지 않는다.
@@ -21,19 +21,35 @@ const PracticeUseState = () => {
     */
 
     // 올바른 예제
-    setUser({ ...user, age: Number(inputRef.current?.value) });
+    setUser({ ...user, count: Number(inputRef.current?.value) });
+  };
+
+  // count 값에 따라 이미지를 결정하는 함수
+  const getImageByCount = (count: number) => {
+    if (count <= 0) {
+      return "/src/assets/chii_good.jpg";
+    } else if (count > 0 && count <= 5) {
+      return "/src/assets/chii_tear.jpg";
+    } else {
+      return "/src/assets/chii.jpg";
+    }
   };
 
   return (
     <>
       <div>
         <h2>useState 연습</h2>
-        <p>Name: {user.name}</p>
-        <p>Age: {user.age}</p>
+        <img
+          src={getImageByCount(user.count)}
+          alt="chii"
+          style={{ width: "300px", height: "300px", objectFit: "cover" }}
+        />
+        <p>이름: {user.name}</p>
+        <p>딱밤 맞을 횟수: {user.count}</p>
       </div>
       <div>
         <input ref={inputRef} type="number" />
-        <button onClick={onClickChangeAge}>변경</button>
+        <button onClick={onClickChangeCount}>변경</button>
       </div>
       <div>
         <p>

@@ -1,9 +1,10 @@
 # react-practice
 
 Hooks
+
 - [x] useState
 - [x] useEffect
-- [ ] useCallback
+- [x] useCallback
 - [ ] useMemo
 - [ ] useActionState
 - [ ] useContext
