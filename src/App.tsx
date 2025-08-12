@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import PracticeUseState from "./hooks/PracticeUseState";
 import PracticeUseEffect from "./hooks/PracticeUseEffect";
+import PracticeUseCallback from "./hooks/PracticeUseCallback";
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
                 <li>
                   <Link to="/useeffect">useEffect</Link>
                 </li>
-                <li>useCallback</li>
+                <li>
+                  <Link to="/usecallback">useCallback</Link>
+                </li>
                 <li>useMemo</li>
                 <li>useActionState</li>
                 <li>useContext</li>
@@ -39,6 +42,7 @@ function App() {
         />
         <Route path="/usestate" element={<PracticeUseState />} />
         <Route path="/useeffect" element={<PracticeUseEffect />} />
+        <Route path="/usecallback" element={<PracticeUseCallback />} />
       </Routes>
     </Router>
   );
